@@ -5,6 +5,7 @@ fn main() {
     // start
 }
 
+// use .into() for unpacking matching into tuple
 /// Use "" for empty delim
 fn split_into_arr<T, const N: usize>(delim: char) -> [T; N]
 where
