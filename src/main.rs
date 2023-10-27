@@ -6,7 +6,6 @@ fn main() {
 }
 
 // use .into() for unpacking matching into tuple
-/// Use "" for empty delim
 fn split_into_arr<T, const N: usize>(delim: char) -> [T; N]
 where
     T: FromStr,
@@ -16,7 +15,7 @@ where
     read_into_vec(delim).try_into().unwrap()
 }
 
-/// Use "" for empty delim
+// if need empty delim, read into string and loop over .chars()
 fn read_into_vec<T>(delim: char) -> Vec<T>
 where
     T: FromStr,
