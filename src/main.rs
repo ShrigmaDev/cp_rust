@@ -5,6 +5,29 @@ fn main() {
     // start
 }
 
+fn lcm<T>(a: T, b: T) -> T
+where
+    T: std::cmp::PartialEq
+        + std::ops::Div<Output = T>
+        + std::ops::Mul<Output = T>
+        + std::ops::Rem<Output = T>
+        + std::default::Default
+        + Copy,
+{
+    return a / gcd(a, b) * b;
+}
+
+fn gcd<T>(a: T, b: T) -> T
+where
+    T: std::cmp::PartialEq + std::ops::Rem<Output = T> + std::default::Default + Copy,
+{
+    if b == Default::default() {
+        a
+    } else {
+        gcd(b, a % b)
+    }
+}
+
 // use .into() for matching into tuple
 fn split_into_arr<T, const N: usize>(delim: char) -> [T; N]
 where
