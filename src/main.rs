@@ -5,6 +5,11 @@ fn main() {
     // start
 }
 
+// sum of numbers l, l+1, l+2 ... r
+fn range_sum(l: i128, r: i128) -> i128 {
+    ((l + r) * (r - l + 1)) / 2
+}
+
 fn lcm<T>(a: T, b: T) -> T
 where
     T: std::cmp::PartialEq
